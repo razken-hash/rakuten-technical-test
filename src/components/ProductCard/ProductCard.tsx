@@ -1,30 +1,23 @@
 import { Card, Box, Typography } from '@mui/material';
 import type { Product } from '../../models/Product';
+import { cardStyle, productImageStyle, brandStyle, titleTextStyle, newPriceStyle } from "./ProductCard.styles";
 
 interface ProductCardProps {
-    product: Product | null; // product can be null
+    product: Product | null;
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
+    if (!product) return null;
+
+    const hasNewPrice = product.newPrice != null && product.newPrice > 0;
+    const hasUsedPrice = product.usedPrice != null && product.usedPrice > 0;
+
+    if (!hasNewPrice && !hasUsedPrice) return null;
+
     return (
         <Card
-            sx={{
-                display: 'flex',
-                overflow: 'hidden',
-                width: '343px',
-                p: 2,
-                borderRadius: 4,
-                border: "1px solid #DBDBDB",
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
-                cursor: "pointer",
-                transition: "transform 0.4s ease, box-shadow 0.2s ease",
-                "&:hover": {
-                    transform: "scale(1.03)",
-                    boxShadow: "0 6px 25px rgba(0,0,0,0.15)",
-                },
-            }}
-
-            onClick={() => window.open(product?.link, "_blank")}
+            sx={cardStyle}
+            onClick={() => product.link && window.open(product.link, "_blank")}
         >
             {/* Image */}
             <Box
@@ -36,13 +29,9 @@ export default function ProductCard({ product }: ProductCardProps) {
             >
                 <Box
                     component="img"
-                    src={product?.imageUrl}
-                    alt="iPhone 11"
-                    sx={{
-                        width: '120px',
-                        height: '120px',
-                        objectFit: 'contain',
-                    }}
+                    src={product.imageUrl}
+                    alt={product.title}
+                    sx={productImageStyle}
                 />
             </Box>
 
@@ -54,79 +43,45 @@ export default function ProductCard({ product }: ProductCardProps) {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'flex-start',
+                    justifyContent: 'space-evenly',
                 }}
             >
                 {/* Brand */}
-                <Typography
-                    sx={{
-                        fontSize: '12px',
-                        color: '#696969',
-                        fontWeight: 900,
-                    }}
-                >
-                    {product?.brand}
+                <Typography sx={brandStyle}>
+                    {product.brand}
                 </Typography>
 
                 {/* Name */}
-                <Typography
-                    sx={{
-                        fontSize: '14px',
-                        fontWeight: 700,
-                        color: '#333',
-                        mb: 1,
-                        textAlign: 'left',
-                    }}
-                >
-                    {product?.title}
+                <Typography sx={{ ...titleTextStyle, mb: 1 }}>
+                    {product.title}
                 </Typography>
 
                 {/* New Price */}
-                <Typography
-                    sx={{
-                        fontSize: '20px',
-                        fontWeight: 800,
-                        color: '#BF0000',
-                    }}
-                >
-                    {product?.newPrice}€
-
-                    <Typography
-                        component="span"
-                        sx={{
-                            fontSize: '14px',
-                            fontWeight: 600,
-                            ml: 0.5,
-                        }}
-                    >
-                        Neuf
-                    </Typography>
-                </Typography>
-
-                {/* Old Price */}
-                <Box>
-                    <Typography
-                        sx={{
-                            fontSize: '14px',
-                            color: '#333',
-                        }}
-                    >
-                        Occasion dès
-                        <Typography
+                {hasNewPrice && (
+                    <Typography sx={newPriceStyle}>
+                        {product.newPrice}€
+                        <Box
                             component="span"
-                            sx={{
-                                fontSize: '20px',
-                                fontWeight: 700,
-                                ml: 0.5,
-                            }}
+                            sx={{ fontSize: '14px', fontWeight: 600, ml: 0.5 }}
                         >
-                            {product?.usedPrice}€
-                        </Typography>
+                            Neuf
+                        </Box>
                     </Typography>
-                </Box>
+                )}
+
+                {/* Used Price */}
+                {hasUsedPrice && (
+                    <Typography sx={{ fontSize: '14px', color: '#333' }}>
+                        Occasion dès
+                        <Box
+                            component="span"
+                            sx={{ fontSize: '20px', fontWeight: 700, ml: 0.5 }}
+                        >
+                            {product.usedPrice}€
+                        </Box>
+                    </Typography>
+                )}
             </Box>
         </Card>
     );
 }
-
-
-

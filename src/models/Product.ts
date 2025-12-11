@@ -3,7 +3,7 @@ export interface Product {
     title: string;
     brand: string;
     imageUrl: string;
-    newPrice: number;
+    newPrice: number | null;
     usedPrice: number | null;
     link: string;
 }

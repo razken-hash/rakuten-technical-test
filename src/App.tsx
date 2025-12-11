@@ -9,17 +9,19 @@ function App() {
 
   const products: Product[] = useProducts();
 
+  const productsGridStyle = {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 2,
+    justifyContent: 'center',
+    p: 2.5,
+  };
+
   return (
     <>
       <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'row',
-          flexWrap: 'wrap',
-          gap: 2, // MUI spacing: 2 * 8px = 16px (or use 2.5 for 20px)
-          justifyContent: 'center',
-          p: 2.5, // 2.5 * 8px = 20px
-        }}
+        sx={productsGridStyle}
       >
         {products.map((product, index) => (
           <ProductCard product={product} />

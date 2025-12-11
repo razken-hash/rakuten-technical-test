@@ -78,7 +78,7 @@ const products: Product[] = [
         brand: "Apple",
         title: "Apple iPhone 13 Pro 128 Go Graphite",
         imageUrl: "https://fr.shopping.rakuten.com/pictures/0198eaf4-2b5a-79b9-a895-fb1bf5ea5fff_L_NOPAD.jpg",
-        newPrice: 0,
+        newPrice: null,
         usedPrice: 403.00,
         link: "https://fr.shopping.rakuten.com/mfp/7270536/apple-iphone-13-pro?pid=7197507122",
     },

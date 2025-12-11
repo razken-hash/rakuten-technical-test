@@ -70,7 +70,7 @@ The project is deployed online and available at:
 
 5. **Testing Included**  
    - Written using **React Testing Library**.
-   - **3 tests successfully passed**.
+   - **5/5 tests successfully passed**.
 
 ---
 

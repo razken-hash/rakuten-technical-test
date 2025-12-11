@@ -16,6 +16,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
     return (
         <Card
+            data-testid="product-card"
             sx={cardStyle}
             onClick={() => product.link && window.open(product.link, "_blank")}
         >

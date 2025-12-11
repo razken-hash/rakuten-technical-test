@@ -46,3 +46,57 @@ The execution of the hook ``` useEffect ``` call setCount to update the value of
 ```
 Your counter is 5
 ```
+
+# Coding Exercise:
+
+## ✅ Features Implemented
+
+1. **Visual Component Implemented**  
+   - User interface built using reusable React components.
+   - **MUI (Material UI)** is used for styling and layout.
+
+2. **Responsiveness**  
+   - The UI adapts to different screen sizes.
+
+3. **Conditional Rendering**  
+   - Components do **not render** if required data is `null`.
+
+4. **Mocked Data Integration**  
+   - Data is fetched from an external mocked source located inside the **`ProductsRepository`**.
+
+5. **Testing Included**  
+   - Written using **React Testing Library**.
+   - **3 tests successfully passed**.
+
+---
+
+## 🚀 How to Run the Project
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/razken-hash/rakuten-technical-test.git
+cd rakuten-technical-test
+```
+
+### 2. Install dependencies
+```bash
+npm install
+```
+
+### 3. Run in development mode
+```bash
+npm run dev
+```
+
+---
+
+## 🧪 Testing
+Run all tests using:
+```bash
+npx jest --runTestsByPath src/components/ProductCard/ProductCard.test.tsx
+```
+
+---
+
+Made With ♥ By ABDERRAZAK KENNICHE
+

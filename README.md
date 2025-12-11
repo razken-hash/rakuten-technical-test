@@ -49,6 +49,10 @@ Your counter is 5
 
 # Coding Exercise:
 
+The project is deployed online and available at:
+
+[https://rakuten-technical-test.netlify.app/](https://rakuten-technical-test.netlify.app/)
+
 ## ✅ Features Implemented
 
 1. **Visual Component Implemented**  

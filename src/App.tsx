@@ -23,7 +23,7 @@ function App() {
       <Box
         sx={productsGridStyle}
       >
-        {products.map((product, index) => (
+        {products.map((product) => (
           <ProductCard product={product} />
         ))}
       </Box>

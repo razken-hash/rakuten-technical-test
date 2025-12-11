@@ -22,20 +22,20 @@ export const productImageStyle = {
 };
 
 export const brandStyle = {
-    fontSize: '12px',
-    color: '#696969',
+    fontSize: 'body2',
+    color: 'primary.light',
     fontWeight: 900,
 };
 
 export const titleTextStyle = {
-    fontSize: '14px',
+    fontSize: 'body1',
     fontWeight: 700,
-    color: '#333',
+    color: 'primary.dark',
     textAlign: 'left',
 };
 
 export const newPriceStyle = {
-    fontSize: '20px',
+    fontSize: 'subtitle1',
     fontWeight: 800,
-    color: '#BF0000',
+    color: 'primary.main',
 };

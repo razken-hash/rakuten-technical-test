@@ -1,8 +1,13 @@
 import { Box } from '@mui/material'
 import './App.css'
-import IPhoneProductCard from './components/ProductCard/ProductCard'
+import { useProducts } from './hooks/useProducts';
+import type { Product } from './models/Product';
+import ProductCard from './components/ProductCard/ProductCard';
+
 
 function App() {
+
+  const products: Product[] = useProducts();
 
   return (
     <>
@@ -16,17 +21,9 @@ function App() {
           p: 2.5, // 2.5 * 8px = 20px
         }}
       >
-        <IPhoneProductCard />
-        <IPhoneProductCard />
-        <IPhoneProductCard />
-        <IPhoneProductCard />
-        <IPhoneProductCard />
-        <IPhoneProductCard />
-        <IPhoneProductCard />
-        <IPhoneProductCard />
-        <IPhoneProductCard />
-        <IPhoneProductCard />
-        <IPhoneProductCard />
+        {products.map((product, index) => (
+          <ProductCard product={product} />
+        ))}
       </Box>
     </>
   )

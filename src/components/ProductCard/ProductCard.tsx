@@ -1,6 +1,11 @@
 import { Card, Box, Typography } from '@mui/material';
+import type { Product } from '../../models/Product';
 
-export default function IPhoneProductCard() {
+interface ProductCardProps {
+    product: Product | null; // product can be null
+}
+
+export default function ProductCard({ product }: ProductCardProps) {
     return (
         <Card
             sx={{
@@ -22,7 +27,7 @@ export default function IPhoneProductCard() {
             >
                 <Box
                     component="img"
-                    src="https://fr.shopping.rakuten.com/photo/4075345048_ML_NOPAD.jpg"
+                    src={product?.imageUrl}
                     alt="iPhone 11"
                     sx={{
                         width: '120px',
@@ -50,7 +55,7 @@ export default function IPhoneProductCard() {
                         fontWeight: 900,
                     }}
                 >
-                    Apple
+                    {product?.brand}
                 </Typography>
 
                 {/* Name */}
@@ -63,7 +68,7 @@ export default function IPhoneProductCard() {
                         textAlign: 'left',
                     }}
                 >
-                    Apple iPhone 11 128GB Double SIM Noir Sidéral
+                    {product?.title}
                 </Typography>
 
                 {/* New Price */}
@@ -74,7 +79,7 @@ export default function IPhoneProductCard() {
                         color: '#BF0000',
                     }}
                 >
-                    754€
+                    {product?.newPrice}€
 
                     <Typography
                         component="span"
@@ -105,7 +110,7 @@ export default function IPhoneProductCard() {
                                 ml: 0.5,
                             }}
                         >
-                            720.99 €
+                            {product?.usedPrice}€
                         </Typography>
                     </Typography>
                 </Box>

@@ -7,7 +7,7 @@ import ProductCard from './components/ProductCard/ProductCard';
 
 function App() {
 
-  const products: Product[] = useProducts();
+  const products: (Product | null)[] = useProducts();
 
   const productsGridStyle = {
     display: 'flex',

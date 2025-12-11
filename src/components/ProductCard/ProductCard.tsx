@@ -1,6 +1,6 @@
 import { Card, Box, Typography } from '@mui/material';
 import type { Product } from '../../models/Product';
-import { cardStyle, productImageStyle, brandStyle, titleTextStyle, newPriceStyle } from "./ProductCard.styles";
+import { cardStyle, productImageStyle, brandStyle, titleTextStyle, newPriceStyle, usedPriceStyle } from "./ProductCard.styles";
 
 interface ProductCardProps {
     product: Product | null;
@@ -75,13 +75,13 @@ export default function ProductCard({ product }: ProductCardProps) {
                         Occasion dès
                         <Box
                             component="span"
-                            sx={{ fontSize: '20px', fontWeight: 700, ml: 0.5 }}
+                            sx={{ ...usedPriceStyle, ml: 0.5 }}
                         >
                             {product.usedPrice}€
                         </Box>
                     </Typography>
                 )}
             </Box>
-        </Card>
+        </Card >
     );
 }

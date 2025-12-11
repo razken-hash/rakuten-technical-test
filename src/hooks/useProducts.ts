@@ -3,7 +3,7 @@ import type { Product } from "../models/Product";
 import { ProductRepository } from "../repositories/ProductRepository";
 
 export function useProducts() {
-    const [products, setProducts] = useState<Product[]>([]);
+    const [products, setProducts] = useState<(Product | null)[]>([]);
 
     useEffect(() => {
         setProducts(ProductRepository.getAll());

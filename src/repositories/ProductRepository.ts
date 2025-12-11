@@ -1,15 +1,18 @@
 import type { Product } from "../models/Product";
 
-const products: Product[] = [
+const products: (Product | null)[] = [
     {
         id: "13530418020",
         brand: "Apple",
         title: "Apple iPhone 17 Pro Max 256 Go Orange cosmique",
         imageUrl: "https://fr.shopping.rakuten.com/pictures/0199584f-17ca-751f-9d4c-f4f701fcb969_L_NOPAD.jpg",
         newPrice: 1359.00,
-        usedPrice: 0.00,
+        usedPrice: null,
         link: "https://fr.shopping.rakuten.com/mfp/shop/13837647/apple-iphone-17-pro-max?pid=13530418020",
     },
+    null,
+    null,
+    null,
     {
         id: "13159484186",
         brand: "Apple",
@@ -19,6 +22,7 @@ const products: Product[] = [
         usedPrice: 0.00,
         link: "https://fr.shopping.rakuten.com/mfp/shop/12362131/apple-iphone-16?pid=13159484186",
     },
+    null,
     {
         id: "13532134921",
         brand: "Apple",
@@ -37,6 +41,7 @@ const products: Product[] = [
         usedPrice: 1029.99,
         link: "https://fr.shopping.rakuten.com/mfp/shop/12362134/apple-iphone-16-pro-max?pid=13159484200",
     },
+    null,
     {
         id: "11517874360",
         brand: "Apple",
@@ -60,7 +65,7 @@ const products: Product[] = [
         brand: "Apple",
         title: "Apple iPhone 13 Noir minuit 128 Go",
         imageUrl: "https://fr.shopping.rakuten.com/pictures/0197bea4-18b6-7acc-aa18-f0a04be26413_L_NOPAD.jpg",
-        newPrice: 0,
+        newPrice: null,
         usedPrice: 330.00,
         link: "https://fr.shopping.rakuten.com/mfp/7270256/apple-iphone-13?pid=7197507097",
     },
@@ -96,7 +101,7 @@ const products: Product[] = [
         brand: "Apple",
         title: "Apple iPhone 13 Pro Max 128 Go Bleu alpin",
         imageUrl: "https://fr.shopping.rakuten.com/pictures/01998780-4108-70dc-8397-078e681b5c5e_L_NOPAD.jpg",
-        newPrice: 0,
+        newPrice: null,
         usedPrice: 389.90,
         link: "https://fr.shopping.rakuten.com/mfp/7270437/apple-iphone-13-pro-max?pid=7197507128",
     },
@@ -105,7 +110,7 @@ const products: Product[] = [
         brand: "Apple",
         title: "Apple iPhone 11 64 Go Noir",
         imageUrl: "https://fr.shopping.rakuten.com/pictures/01997c22-558d-76c0-b8d1-b65c265cc06e_L_NOPAD.jpg",
-        newPrice: 0,
+        newPrice: null,
         usedPrice: 176.00,
         link: "https://fr.shopping.rakuten.com/mfp/5915368/apple-iphone-11?pid=4245950545",
     },
@@ -115,7 +120,7 @@ const products: Product[] = [
         title: "Apple iPhone 11 64 Go Blanc",
         imageUrl: "https://fr.shopping.rakuten.com/pictures/01997c23-d0cb-7dd8-983c-0497e9a6558d_L_NOPAD.jpg",
         newPrice: 591.00,
-        usedPrice: 0,
+        usedPrice: null,
         link: "https://fr.shopping.rakuten.com/mfp/shop/5915368/apple-iphone-11?pid=4203109224",
     },
     {
@@ -123,7 +128,7 @@ const products: Product[] = [
         brand: "Apple",
         title: "Apple iPhone XS 64 Go Gris",
         imageUrl: "https://fr.shopping.rakuten.com/pictures/01987415-dd6e-77ac-bbad-24739440666b_L_NOPAD.jpg",
-        newPrice: 0,
+        newPrice: null,
         usedPrice: 115.00,
         link: "https://fr.shopping.rakuten.com/mfp/5771221/apple-iphone-xs?pid=3435254974",
     },
@@ -139,7 +144,7 @@ const products: Product[] = [
 ];
 
 export const ProductRepository = {
-    getAll(): Product[] {
+    getAll(): (Product | null)[] {
         return products;
     },
 };

@@ -11,17 +11,17 @@ const lightTheme = createTheme({
             dark: '#333333',      // black for normal text
         },
     },
-    typography: {
-        body1: {
-            fontSize: '14px',
-        },
-        body2: {
-            fontSize: '12px',
-        },
-        subtitle1: {
-            fontSize: '20px',
-        },
-    },
+    // typography: {
+    //     body1: {
+    //         fontSize: '14px',
+    //     },
+    //     body2: {
+    //         fontSize: '12px',
+    //     },
+    //     subtitle1: {
+    //         fontSize: '20px',
+    //     },
+    // },
 });
 
 
